@@ -97,8 +97,9 @@
 
         function buy(name, price) {
             const cleanNum = whatsappNumber.replace(/\D/g, '');
-            const text = encodeURIComponent(`Hello! I'm interested in purchasing the "${name}" for ₹${price}. Please share the process!`);
-            window.open(`https://wa.me/${cleanNum}?text=${text}`, '_blank');
+            const text = encodeURIComponent(`Hi! Shalini, I'm interested in purchasing: "*${name}*" for *₹${price}*. 
+                                                    Please share the process!`);
+            window.open(`https://wa.me/917651837322`, '_blank');
         }
 
         // Filter Logic

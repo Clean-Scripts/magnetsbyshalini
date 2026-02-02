@@ -11,38 +11,41 @@
 <body class="bg-slate-50 font-sans text-gray-800">
 
     <nav class="bg-white border-b sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-between items-center">
-            <a href="index.html" <img src="https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" alt="Logo" class="h-12 w-12 rounded-full object-cover border border-pink-100"></a>
-            <a href="index.html" class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600">
-                MAGNETSBYSHALINI
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" alt="Logo" class="h-12 w-12 rounded-full object-cover border border-pink-100 shadow-sm">
+                <span class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600 hidden md:block">
+                    MAGNETSBYSHALINI
+                </span>
             </a>
-            <div class="space-x-8 font-semibold text-sm uppercase tracking-wide">
+
+            <div class="flex gap-4 sm:gap-8 font-semibold text-xs sm:text-sm uppercase tracking-wide">
                 <a href="index.html" class="text-pink-600 border-b-2 border-pink-600 pb-1">Shop</a>
                 <a href="about.html" class="hover:text-pink-600 transition">About</a>
-                <a href="terms.html" class="hover:text-pink-600 transition">Terms & Condition</a>
-                <a href="privacy.html" class="hover:text-pink-600 transition">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-pink-600 transition hidden sm:block">Terms</a>
+                <a href="privacy.html" class="hover:text-pink-600 transition hidden sm:block">Privacy</a>
             </div>
         </div>
     </nav>
 
     <header class="bg-white py-12 border-b">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Handcrafted Custom Magnets</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 italic">Handcrafted Custom Magnets</h1>
             <p class="text-gray-500 mb-8 max-w-lg mx-auto">Premium quality photo magnets, calendars, and religious keepsakes. Perfect for gifting!</p>
             
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
                 <div class="relative w-full max-w-md">
-                    <input type="text" id="search" placeholder="Search by name..." class="w-full px-5 py-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-pink-400 outline-none shadow-sm">
+                    <input type="text" id="search" placeholder="Search by name..." class="w-full px-5 py-3 rounded-full border border-gray-200 focus:ring-2 focus:ring-pink-400 outline-none shadow-sm transition-all">
                     <i class="fa fa-search absolute right-5 top-4 text-gray-400"></i>
                 </div>
                 <div class="flex gap-2">
-                    <select id="filter" class="px-4 py-3 rounded-full border border-gray-200 bg-white font-medium text-gray-600 outline-none">
+                    <select id="filter" class="px-4 py-3 rounded-full border border-gray-200 bg-white font-medium text-gray-600 outline-none hover:border-pink-300 cursor-pointer">
                         <option value="all">All Items</option>
                         <option value="Religious">Religious</option>
                         <option value="Calendar">Calendar</option>
                         <option value="Custom">Custom Photo</option>
                     </select>
-                    <select id="sort" class="px-4 py-3 rounded-full border border-gray-200 bg-white font-medium text-gray-600 outline-none">
+                    <select id="sort" class="px-4 py-3 rounded-full border border-gray-200 bg-white font-medium text-gray-600 outline-none hover:border-pink-300 cursor-pointer">
                         <option value="none">Sort By</option>
                         <option value="low">Price: Low to High</option>
                         <option value="high">Price: High to Low</option>
@@ -59,35 +62,38 @@
 
     <footer class="bg-white border-t py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-400 text-sm">© 2026 MagnetsByShalini | <a href="privacy.html" class="hover:text-pink-500">Privacy Policy</a> | <a href="terms.html" class="hover:text-pink-500">Terms & Condition</a></p>
+            <p class="text-gray-400 text-sm italic">Designed for quality, crafted for memories.</p>
+            <p class="text-gray-400 text-sm mt-2">© 2026 MagnetsByShalini | <a href="privacy.html" class="underline">Privacy</a> | <a href="terms.html" class="underline">Terms</a></p>
         </div>
     </footer>
 
     <script>
         const products = [
-            { id: 1, name: "Ganesha Divine Magnet", price: 199, cat: "Religious", img: "https://github.com/Clean-Scripts/magnetsbyshalini/blob/main/magnets.webp?w=500" },
-            { id: 2, name: "Mini Calendar 2026", price: 250, cat: "Calendar", img: "https://github.com/Clean-Scripts/magnetsbyshalini/blob/main/magnets.webp?w=500" },
-            { id: 3, name: "Custom Photo polaroid", price: 150, cat: "Custom", img: "https://github.com/Clean-Scripts/magnetsbyshalini/blob/main/magnets.webp?w=500" },
-            { id: 4, name: "Shiva Art Magnet", price: 199, cat: "Religious", img: "https://github.com/Clean-Scripts/magnetsbyshalini/blob/main/magnets.webp?w=500" },
-            { id: 5, name: "Floral Name Magnet", price: 175, cat: "Custom", img: "https://github.com/Clean-Scripts/magnetsbyshalini/blob/main/magnets.webp?w=500" }
+            { id: 1, name: "Ganesha Divine Magnet", price: 199, cat: "Religious", img: "https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" },
+            { id: 2, name: "Mini Calendar 2026", price: 250, cat: "Calendar", img: "https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" },
+            { id: 3, name: "Custom Photo polaroid", price: 150, cat: "Custom", img: "https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" },
+            { id: 4, name: "Shiva Art Magnet", price: 199, cat: "Religious", img: "https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" },
+            { id: 5, name: "Floral Name Magnet", price: 175, cat: "Custom", img: "https://raw.githubusercontent.com/Clean-Scripts/magnetsbyshalini/main/magnets.webp" }
         ];
-
-        const whatsappNumber = "+91 98765 43210"; // Updated per your requirement
 
         function render(items) {
             const gallery = document.getElementById('gallery');
+            if(items.length === 0) {
+                gallery.innerHTML = `<p class="col-span-full text-center text-gray-400 py-10">No products found match your search.</p>`;
+                return;
+            }
             gallery.innerHTML = items.map(p => `
-                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all border border-gray-100 group">
-                    <div class="h-64 overflow-hidden">
-                        <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="${p.img}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold text-pink-500 shadow-sm">${p.cat}</div>
                     </div>
                     <div class="p-6">
-                        <p class="text-xs font-bold text-pink-500 uppercase mb-1">${p.cat}</p>
-                        <h3 class="text-lg font-bold">${p.name}</h3>
+                        <h3 class="text-lg font-bold text-gray-800">${p.name}</h3>
                         <div class="mt-4 flex justify-between items-center">
-                            <span class="text-xl font-extrabold text-gray-900">₹${p.price}</span>
-                            <button onclick="buy('${p.name}', ${p.price})" class="bg-green-500 text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-green-600 flex items-center gap-2">
-                                <i class="fab fa-whatsapp"></i> PURCHASE
+                            <span class="text-xl font-black text-indigo-600">₹${p.price}</span>
+                            <button onclick="buy('${p.name}', ${p.price})" class="bg-green-500 text-white px-5 py-2.5 rounded-xl font-bold text-xs hover:bg-green-600 transition-colors flex items-center gap-2 shadow-lg shadow-green-100">
+                                <i class="fab fa-whatsapp text-lg"></i> PURCHASE
                             </button>
                         </div>
                     </div>
@@ -96,19 +102,32 @@
         }
 
         function buy(name, price) {
-            const cleanNum = whatsappNumber.replace(/\D/g, '');
-            const text = encodeURIComponent(`Hi! Shalini, I'm interested in purchasing: "*${name}*" for *₹${price}*. 
-                                                    Please share the process!`);
-            window.open(`https://wa.me/917651837322`, '_blank');
+            const phoneNumber = "917651837322";
+            
+            // Decorative WhatsApp message
+            const message = `8[ NEW ORDER REQUEST ]*
+=========================
+_Product:_ *${name}*
+_Price:_ *₹${price}*
+-------------------------
+Hi Shalini!
+I'm interested in buying this beautiful magnet. 
+Could you please guide me with the next steps?
+=========================
+Sent via MagnetsByShalini Web`;
+
+            const encodedText = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank');
         }
 
-        // Filter Logic
         function update() {
             const q = document.getElementById('search').value.toLowerCase();
             const f = document.getElementById('filter').value;
             const s = document.getElementById('sort').value;
 
-            let filtered = products.filter(p => p.name.toLowerCase().includes(q) && (f === 'all' || p.cat === f));
+            let filtered = products.filter(p => 
+                p.name.toLowerCase().includes(q) && (f === 'all' || p.cat === f)
+            );
             
             if (s === 'low') filtered.sort((a,b) => a.price - b.price);
             if (s === 'high') filtered.sort((a,b) => b.price - a.price);

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnets by Shalini | Premium Custom Magnets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .product-card:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                MagnetsByShalini
+            </h1>
+            <div class="space-x-6 hidden md:flex font-medium">
+                <a href="index.html" class="text-pink-600 border-b-2 border-pink-600">Shop</a>
+                <a href="about.html" class="hover:text-pink-600 transition">About</a>
+                <a href="terms.html" class="hover:text-pink-600 transition">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-12 px-4 text-center bg-white border-b">
+        <h2 class="text-4xl font-extrabold mb-2">Premium Custom Photo Magnets</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">The perfect gift for literally any occasion. Handcrafted with love.</p>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-4 items-center justify-between bg-white p-4 rounded-xl shadow-sm">
+            <div class="relative w-full md:w-1/3">
+                <input type="text" id="searchInput" placeholder="Search magnets..." class="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 outline-none">
+                <i class="fa fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+            
+            <div class="flex gap-4 w-full md:w-auto">
+                <select id="filterCategory" class="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-pink-500 bg-white">
+                    <option value="all">All Categories</option>
+                    <option value="religious">Religious</option>
+                    <option value="calendar">Calendars</option>
+                    <option value="custom">Custom Photo</option>
+                </select>
+                <select id="sortPrice" class="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-pink-500 bg-white">
+                    <option value="default">Sort By</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 pb-20">
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            </div>
+    </main>
+
+    <footer class="bg-white border-t py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500">© 2026 MagnetsByShalini. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center gap-6">
+                <a href="privacy.html" class="text-sm text-gray-400 hover:underline">Privacy Policy</a>
+                <a href="terms.html" class="text-sm text-gray-400 hover:underline">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Ganesha Photo Magnet", price: 199, category: "religious", img: "https://images.unsplash.com/photo-1567591974574-e85263d443db?auto=format&fit=crop&q=80&w=400" },
+            { id: 2, name: "2026 Magnetic Calendar", price: 299, category: "calendar", img: "https://images.unsplash.com/photo-1506784919140-58709ee375d7?auto=format&fit=crop&q=80&w=400" },
+            { id: 3, name: "Custom Polaroid Magnet", price: 150, category: "custom", img: "https://images.unsplash.com/photo-1526285191482-441434934149?auto=format&fit=crop&q=80&w=400" },
+            { id: 4, name: "Shiva Divine Magnet", price: 199, category: "religious", img: "https://images.unsplash.com/photo-1590050752117-23a9d7fc217d?auto=format&fit=crop&q=80&w=400" }
+        ];
+
+        const whatsappNumber = "+919876543210"; // Placeholder
+
+        function renderProducts(data) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = data.map(item => `
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border">
+                    <div class="overflow-hidden h-64">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-widest text-pink-500">${item.category}</span>
+                        <h3 class="text-lg font-bold mt-1">${item.name}</h3>
+                        <div class="flex items-center justify-between mt-4">
+                            <span class="text-xl font-bold text-gray-900">₹${item.price}</span>
+                            <button onclick="purchase('${item.name}', ${item.price})" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 transition">
+                                <i class="fab fa-whatsapp"></i> Buy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function purchase(name, price) {
+            const msg = encodeURIComponent(`Hi Shalini! I want to purchase: ${name} (Price: ₹${price}). Please share payment details.`);
+            window.open(`https://wa.me/917651837322?text=${msg});
+        }
+
+        // Add Search/Sort Logic
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const filtered = products.filter(p => p.name.toLowerCase().includes(e.target.value.toLowerCase()));
+            renderProducts(filtered);
+        });
+
+        renderProducts(products);
+    </script>
+</body>
+</html>
